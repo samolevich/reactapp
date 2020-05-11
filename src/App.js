@@ -15,9 +15,14 @@ export class App extends Component {
     this.setState({title: arg})
   }
 
+  inputChange = (event) => {
+    this.setState({title: event.target.value})
+  }
+
   render() {
     return (
       <div>
+        <input type="text" onChange={this.inputChange} value={this.state.title} />
         <h1>{this.state.title}</h1>
         <button onClick={() => this.changeTitle('main')}>Change title</button>
         <Item name={this.state.items[0].name} number={this.state.items[0].number} changeTitle={this.changeTitle} />
