@@ -11,18 +11,18 @@ export class App extends Component {
     title: 'Title',
   }
 
-  changeTitle = () => {
-    this.setState({title: 'New Title'})
+  changeTitle = (arg) => {
+    this.setState({title: arg})
   }
 
   render() {
     return (
       <div>
         <h1>{this.state.title}</h1>
-        <button onClick={this.changeTitle}>Change title</button>
-        <Item name={this.state.items[0].name} number={this.state.items[0].number} />
-        <Item name={this.state.items[1].name} number={this.state.items[1].number} />
-        <Item name={this.state.items[2].name} number={this.state.items[2].number} />
+        <button onClick={() => this.changeTitle('main')}>Change title</button>
+        <Item name={this.state.items[0].name} number={this.state.items[0].number} changeTitle={this.changeTitle} />
+        <Item name={this.state.items[1].name} number={this.state.items[1].number} changeTitle={this.changeTitle} />
+        <Item name={this.state.items[2].name} number={this.state.items[2].number} changeTitle={this.changeTitle} />
       </div>
     )
   }
