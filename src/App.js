@@ -25,7 +25,7 @@ export class App extends Component {
         <input type="text" onChange={this.inputChange} value={this.state.title} />
         <h1>{this.state.title}</h1>
         <button onClick={() => this.changeTitle('main')}>Change title</button>
-        { this.state.items.map(item => <Item name={item.name} number={item.number} changeTitle={this.changeTitle} />) }
+        { this.state.items.map(item => <Item key={item.name + item.number} name={item.name} number={item.number} changeTitle={this.changeTitle} />) }
       </div>
     )
   }
