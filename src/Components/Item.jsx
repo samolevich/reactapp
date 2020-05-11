@@ -3,8 +3,8 @@ import React from 'react'
 export default props => {
   return (
     <div>
-      <p>Name: {props.name}</p>
-      <p>Number: {props.number}</p>
+      <h2>Name: {props.name}</h2>
+      <h3>Number: {props.number}</h3>
     </div>
   )
 }
