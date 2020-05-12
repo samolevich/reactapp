@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Item from './Components/Item';
+import Counter from './Components/Counter';
 
 export class App extends Component {
   state = {
@@ -37,6 +38,7 @@ export class App extends Component {
 
     return (
       <div>
+        <Counter />
         <input type='text' onChange={this.inputChange} value={this.state.title} />
         <h1>{this.state.title}</h1>
         <button onClick={() => this.changeTitle('main')}>Change title</button>
