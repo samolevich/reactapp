@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { Route, NavLink, Redirect } from 'react-router-dom';
 import Item from './Components/Item';
 import Counter from './Components/Counter';
+import About from './Components/About';
 
 export class App extends Component {
   state = {
@@ -37,6 +39,10 @@ export class App extends Component {
 
     return (
       <div>
+        <p><NavLink to='/about'>about</NavLink></p>
+        <p><NavLink to='/'>home</NavLink></p>
+        <Route path='/about' component={About} />
+        <Redirect to={'/'} />
         <Counter />
         <input type='text' onChange={this.inputChange} value={this.state.title} />
         <h1>{this.state.title}</h1>
