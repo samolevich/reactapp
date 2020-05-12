@@ -31,8 +31,7 @@ export class App extends Component {
     let items = null;
     if (this.state.showItems) {
       items = this.state.items.map(item => (
-        <Item key={item.name + item.number} name={item.name} number={item.number} changeTitle={this.changeTitle}
-        />
+        <Item key={item.name + item.number} name={item.name} number={item.number} changeTitle={this.changeTitle} />
       ));
     }
 

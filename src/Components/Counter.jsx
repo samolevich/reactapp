@@ -6,20 +6,20 @@ export class Counter extends Component {
   };
 
   addCounter = () => {
-    this.setState({ counter: this.state.counter + 1 });
+    this.setState(prevState => ({ counter: prevState.counter + 1 }));
   };
 
   subCounter = () => {
-    this.setState({ counter: this.state.counter - 1 });
+    this.setState(prevState => ({ counter: prevState.counter - 1 }));
   };
 
   render() {
     return (
-      <>
+      <p>
         <h2>{this.state.counter}</h2>
         <button onClick={this.addCounter}>+</button>
         <button onClick={this.subCounter}>-</button>
-      </>
+      </p>
     );
   }
 }
